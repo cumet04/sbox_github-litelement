@@ -1,0 +1,21 @@
+{
+	"name": "Ruby",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "vscode",
+	"remoteEnv": {
+		"PATH":"/workspace/.devcontainer/bin:${containerEnv:PATH}"
+	},
+	"postCreateCommand": ".devcontainer/bin/initial_setup",
+	"extensions": [
+		"rebornix.Ruby",
+		"castwide.solargraph"
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"ruby.useLanguageServer": true,
+		"ruby.format": "rufo",
+		"remote.autoForwardPorts": false
+	}
+}

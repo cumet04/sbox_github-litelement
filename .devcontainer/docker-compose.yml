@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_UID:
+        USER_GID:
+    init: true
+    volumes:
+      - ..:/workspace:cached
+      - bundle:/usr/local/bundle
+    command: sleep infinity 
+    ports:
+      - 5000:4567
+
+volumes:
+  bundle:

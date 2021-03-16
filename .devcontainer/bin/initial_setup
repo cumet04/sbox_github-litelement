@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -eu
+cd $(readlink -f $0 | xargs dirname)/../.. # workplace root
+
+echo 'install dev packages:'
+bundle
+
+echo 'setup dev tools:'
+gem install solargraph rufo
+solargraph download-core
+solargraph bundle
+solargraph clear
+
+echo 'done'
