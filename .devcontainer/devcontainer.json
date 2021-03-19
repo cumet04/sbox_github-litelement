@@ -12,6 +12,7 @@
 		"rebornix.Ruby",
 		"castwide.solargraph",
 		"dbaeumer.vscode-eslint",
+		"runem.lit-plugin"
 	],
 	"settings": {
 		"editor.codeActionsOnSave": {

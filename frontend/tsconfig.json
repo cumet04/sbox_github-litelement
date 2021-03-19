@@ -9,7 +9,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "experimentalDecorators":true
   },
   "include": [
     "src/**/*.ts",
