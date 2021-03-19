@@ -14,7 +14,9 @@ services:
       - bundle:/usr/local/bundle
     command: sleep infinity 
     ports:
-      - 5000:4567
+      - 3000:4567
+      - 5000:5000
+      - 35729:35729
 
 volumes:
   bundle:

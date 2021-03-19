@@ -1,0 +1,7 @@
+{
+  "ignorePatterns": "build/*",
+  "extends": "./node_modules/gts/",
+  "env": {
+    "browser": true
+  }
+}

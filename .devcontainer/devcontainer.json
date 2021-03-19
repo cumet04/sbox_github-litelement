@@ -1,21 +1,27 @@
 {
-	"name": "Ruby",
+	"name": "GithubReader",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
 	"remoteUser": "vscode",
 	"remoteEnv": {
-		"PATH":"/workspace/.devcontainer/bin:${containerEnv:PATH}"
+		"PATH": "/workspace/.devcontainer/bin:${containerEnv:PATH}"
 	},
 	"postCreateCommand": ".devcontainer/bin/initial_setup",
 	"extensions": [
 		"rebornix.Ruby",
-		"castwide.solargraph"
+		"castwide.solargraph",
+		"dbaeumer.vscode-eslint",
 	],
 	"settings": {
-		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true
+		},
 		"ruby.useLanguageServer": true,
 		"ruby.format": "rufo",
+		"[ruby]": {
+			"editor.formatOnSave": true,
+		},
 		"remote.autoForwardPorts": false
 	}
 }

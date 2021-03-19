@@ -19,14 +19,14 @@ end
 
 # The app don't distinguish issue/pullreq
 
-get "/:owner/:repo/:number" do
+get "/api/:owner/:repo/:number" do
   owner, repo, number = params[:owner], params[:repo], params[:number]
   out = service.get_issue(owner, repo, number)
   status 404 and return unless out
   out
 end
 
-get "/:owner/:repo/:number/comments" do
+get "/api/:owner/:repo/:number/comments" do
   owner, repo, number = params[:owner], params[:repo], params[:number]
   out = service.get_comments(owner, repo, number)
   status 404 and return unless out

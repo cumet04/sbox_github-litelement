@@ -4,6 +4,11 @@ set -eu
 cd $(readlink -f $0 | xargs dirname)/../.. # workplace root
 
 echo 'install dev packages:'
+
+echo '[frontend] npm ci'
+cd frontend; npm ci; cd ..
+
+echo '[backend] bundle'
 bundle
 
 echo 'setup dev tools:'
