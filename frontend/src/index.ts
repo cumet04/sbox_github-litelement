@@ -1,16 +1,9 @@
-import {LitElement, html, customElement, property, css} from 'lit-element';
+import {LitElement, html, customElement} from 'lit-element';
+import './issue';
 
 @customElement('app-root')
 export class App extends LitElement {
-  @property()
-  msg = 'foo';
-
-  static styles = css`
-    :host {
-      color: red;
-    }
-  `;
   render() {
-    return html`<p>${this.msg}</p>`;
+    return html`<app-issue issueId="rails/rails/41659" />`;
   }
 }
