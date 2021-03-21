@@ -1,10 +1,10 @@
 import {LitElement, html, customElement, property, css} from 'lit-element';
-import {Api} from './api';
+import {Api, Issue} from './api';
 
 @customElement('app-issue')
-export class Issue extends LitElement {
+export class AppIssue extends LitElement {
   @property() issueId = '';
-  @property({attribute: false}) issue?: Object;
+  @property({attribute: false}) issue?: Issue;
 
   async attributeChangedCallback(
     name: string,

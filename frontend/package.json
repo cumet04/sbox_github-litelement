@@ -18,6 +18,7 @@
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
+    "@octokit/types": "^6.12.2",
     "@types/node": "^14.14.35",
     "chokidar": "^3.5.1",
     "connect-livereload": "^0.6.1",
