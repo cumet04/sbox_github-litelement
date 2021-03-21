@@ -4,7 +4,10 @@ class Service
   attr_reader :client
 
   def initialize(token)
-    @client = Octokit::Client.new(:access_token => token)
+    @client = Octokit::Client.new(
+      access_token: token,
+      default_media_type: "application/vnd.github.v3.html+json",
+    )
   end
 
   def get_issue(owner, repo, number, force: false)
