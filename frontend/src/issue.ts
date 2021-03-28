@@ -17,12 +17,27 @@ export class AppIssue extends LitElement {
   }
 
   static styles = css`
-    :host {
-      color: red;
+    .info {
+      font-size: 14px;
+      color: lightgray;
+      .username {
+        font-weight: bold;
+      }
     }
   `;
   render() {
-    if (!this.issue) return;
-    return html`<p>${this.issue.url}</p>`;
+    const issue = this.issue;
+    if (!issue) return;
+
+    const statusText = 'opened this issue';
+    const timeText = new Date(Date.parse(issue.created_at)).toLocaleString();
+
+    return html`<article>
+      <div class="info">
+        <span class="username">${issue.user?.login}</span>
+        <span>${statusText} at ${timeText}</span>
+      </div>
+      <app-markdown-content .body=${issue.body_html!}></app-markdown-content>
+    </article>`;
   }
 }
